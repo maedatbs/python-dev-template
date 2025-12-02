@@ -1,0 +1,16 @@
+# uv / Python
+.venv/
+uv.lock
+__pycache__/
+*.pyc
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MkDocs
+site/
+
+# IDE
+.idea/

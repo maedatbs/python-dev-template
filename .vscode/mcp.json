@@ -1,0 +1,27 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "some-api-key",
+      "description": "Some external API Key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp"
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "localPythonTools": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["your-mcp-server-package"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}

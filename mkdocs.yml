@@ -1,0 +1,42 @@
+site_name: python-dev-template
+site_url: https://maedatbs.github.io/python-dev-template/
+repo_url: https://github.com/maedatbs/python-dev-template
+repo_name: maedatbs/python-dev-template
+
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+nav:
+  - Home: index.md
+  - Guide:
+      - はじめに: guide/getting-started.md
+      - 技術スタック概要: guide/stack.md
+      - ブランチ戦略と運用: guide/branching.md
+  - API:
+      - python_dev_template: api/python_dev_template.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: ["src"]
+          options:
+            docstring_style: google
+            separate_signature: true
+            merge_init_into_class: true
+            show_source: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
