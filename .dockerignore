@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+__pycache__/
+*.py[cod]
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.coverage
+dist
+build
+.DS_Store
+.vscode
+.idea
+docs
+site

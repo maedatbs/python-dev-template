@@ -29,6 +29,21 @@ Windows の場合は VSCode 設定内の Python インタープリタパスを `
 - テスト: `uv run pytest`
 - ドキュメント: `uv run mkdocs serve`
 
+## Docker での実行・デプロイ
+
+```bash
+# イメージをビルド
+docker build -t python-dev-template .
+
+# ローカル実行（標準出力に "Hello, world!" を出して終了）
+docker run --rm python-dev-template
+
+# デプロイ例: 実行してすぐ終了するバッチとして起動
+docker run --rm --name python-dev-template python-dev-template
+```
+
+コンテナは `python -m python_dev_template` をエントリーポイントに実行し、標準出力にあいさつを表示したら終了します。常駐させたい場合は `CMD` や `docker run` の引数で別のコマンドに差し替えてください。
+
 ## テンプレートの使い方
 
 1. GitHub で本リポジトリを作成し、main に push する。
